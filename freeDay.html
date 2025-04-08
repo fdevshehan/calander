@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>2025 නිවාඩු දින</title>
+  <style>
+    /* Base styles */
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Noto Sans Sinhala', sans-serif;
+      background-color: #FFF8E1; /* Light yellow background */
+      color: #5D4037; /* Dark brown text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      touch-action: manipulation; /* Prevents gesture zooming */
+      user-select: none; /* Disable text selection */
+      -webkit-user-select: none;
+    }
+
+    /* Container card */
+    .container {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #FFFDE7; /* Lighter yellow for card */
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #FFA000; /* Dark yellow accent */
+      animation: fadeIn 0.8s ease-in-out;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      color: #FF6D00; /* Orange-yellow highlight */
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #FFA000; /* Darker yellow accent */
+      border-bottom: 2px solid #FFC107;
+      padding-bottom: 8px;
+      margin-top: 25px;
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .month-list {
+      margin-top: 15px;
+    }
+
+    /* Holiday item cards */
+    .holiday-item {
+      background-color: #FFFDE7;
+      margin: 10px 0;
+      padding: 12px 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      border-left: 4px solid #FFC107; /* Primary accent for regular */
+    }
+
+    .holiday-item:hover {
+      transform: translateX(5px);
+      background-color: #FFECB3; /* Soft hover yellow */
+    }
+
+    .poya-day {
+      border-left-color: #f44336; /* Red for Poya days */
+    }
+
+    .special-day {
+      border-left-color: #4caf50; /* Green for special days */
+    }
+
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      font-weight: bold;
+      color: #8D6E63;
+      font-size: 0.9rem;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile-first adjustments */
+    @media (max-width: 600px) {
+      .container {
+        padding: 15px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .holiday-item {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      body {
+        padding: 15px 10px;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+      }
+
+      .holiday-item {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Button styling, if needed in future */
+    button {
+      border-radius: 25px;
+      background-color: #FFC107;
+      color: #5D4037;
+      padding: 10px 20px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      -webkit-appearance: none;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+  </style>
+  <script>
+    // Prevent pinch zoom and selection on mobile
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>2025 වර්ෂයේ නිවාඩු දින</h1>
+
+    <div class="month-list">
+      <h2>ජනවාරි</h2>
+      <div class="holiday-item poya-day">
+        <b>13 සඳුදා:</b> දුරුතු පුර පසළොස්වක පෝය දිනය
+      </div>
+      <div class="holiday-item">
+        <b>14 අඟහරුවාදා:</b> තෛයිපොංගල් දිනය
+      </div>
+
+      <h2>පෙබරවාරි</h2>
+      <div class="holiday-item special-day">
+        <b>04 අඟහරුවාදා:</b> ජාතික නිදහස් දිනය
+      </div>
+      <div class="holiday-item poya-day">
+        <b>12 බදාදා:</b> නවම් පුර පසළොස්වක පෝය දිනය
+      </div>
+      <div class="holiday-item">
+        <b>26 බදාදා:</b> මහ ශිව රාත්‍රී දිනය
+      </div>
+
+      <h2>මාර්තු</h2>
+      <div class="holiday-item poya-day">
+        <b>13 බ්‍රහස්පතින්දා:</b> මැදින් පුර පසළොස්වක පෝය දිනය
+      </div>
+      <div class="holiday-item">
+        <b>31 සඳුදා:</b> රාමසාන් දිනය
+      </div>
+
+      <h2>අප්‍රේල්</h2>
+      <div class="holiday-item poya-day">
+        <b>12 සෙනසුරාදා:</b> බක් පුර පසළොස්වක පෝය දිනය
+      </div>
+      <div class="holiday-item special-day">
+        <b>13 ඉරිදා:</b> සිංහල හා දෙමළ අලුත් අවුරුදු පෙර දිනය
+      </div>
+      <div class="holiday-item special-day">
+        <b>14 සඳුදා:</b> සිංහල හා දෙමළ අලුත් අවුරුදු දිනය
+      </div>
+      <div class="holiday-item">
+        <b>15 අඟහරුවාදා:</b> විශේෂ බැංකු නිවාඩු
+      </div>
+      <div class="holiday-item">
+        <b>18 සිකුරාදා:</b> මහ සිකුරාදා දිනය
+      </div>
+
+      <h2>මැයි</h2>
+      <div class="holiday-item">
+        <b>01 බ්‍රහස්පතින්දා:</b> ලෝක කම්කරු දිනය
+      </div>
+      <div class="holiday-item poya-day">
+        <b>12 සඳුදා:</b> වෙසක් පුර පසළොස්වක පෝය දිනය
+      </div>
+
+      <h2>ජුනි</h2>
+      <div class="holiday-item">
+        <b>13 අඟහරුවාදා:</b> වෙසක් පසුව දිනය 
+      </div>
+      <div class="holiday-item">
+        <b>07 සෙනසුරාදා:</b> හජ්ජි උත්සව දිනය
+      </div>
+      <div class="holiday-item poya-day">
+        <b>10 අඟහරුවාදා:</b> පොසොන් පුර පසළොස්වක පෝය දිනය
+      </div>
+
+      <h2>ජූලි</h2>
+      <div class="holiday-item poya-day">
+        <b>10 බ්‍රහස්පතින්දා:</b> ඇසළ පුර පසළොස්වක පෝය දිනය
+      </div>
+      <div class="holiday-item poya-day">
+        <b>08 සිකුරාදා:</b> නිකිණි පුර පසළොස්වක පෝය දිනය 
+      </div>
+
+      <h2>අගෝස්තු</h2>
+      <div class="holiday-item">
+        <b>05 සිකුරාදා:</b> නබි නායකතුමාගේ උපන් දිනය 
+      </div>
+
+      <h2>සැප්තැම්බර්</h2>
+      <div class="holiday-item poya-day">
+        <b>07 ඉරිදා:</b> බිනර පුර පසළොස්වක පෝය දිනය 
+      </div>
+
+      <h2>ඔක්තෝබර්</h2>
+      <div class="holiday-item poya-day">
+        <b>06 සඳුදා:</b> වප් පුර පසළොස්වක පෝය දිනය 
+      </div>
+      <div class="holiday-item">
+        <b>20 සඳුදා:</b> දීපවාලි උත්සව දිනය 
+      </div>
+
+      <h2>නොවැම්බර්</h2>
+      <div class="holiday-item poya-day">
+        <b>05 බදාදා:</b> ඉල් පුර පසළොස්වක පෝය දිනය 
+      </div>
+
+      <h2>දෙසැම්බර්</h2>
+      <div class="holiday-item poya-day">
+        <b>04 බ්‍රහස්පතින්දා:</b> උඳුවප් පුර පසළොස්වක පෝය දිනය 
+      </div>
+      <div class="holiday-item">
+        <b>25 බ්‍රහස්පතින්දා:</b> නත්තල් උත්සව දිනය 
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
