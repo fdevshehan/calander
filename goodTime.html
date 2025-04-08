@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>සුබ මුහුර්ත</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 15px;
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; /* System fonts with fallbacks */
+            background-color: #FFF8E1; /* Light yellow background */
+            color: #5D4037; /* Dark brown text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            font-size: 16px; /* Base font size */
+            touch-action: manipulation; /* Mobile touch action */
+            -webkit-user-select: none; /* Prevent text selection */
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 15px 0;
+            padding: 15px;
+            background-color: #FFFDE7; /* Lighter yellow cards */
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-left: 4px solid #FFA000; /* Darker yellow accent border */
+            animation: fadeIn 0.8s ease-in-out;
+            transition: all 0.3s ease; /* Smooth transitions */
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #FFC107; /* Material Design yellow title */
+            margin: 10px 0 15px;
+        }
+
+        .muhurtha-box {
+            background-color: #FFFDE7; /* Lighter yellow boxes */
+            margin: 12px 0;
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: all 0.3s ease; /* Smooth transitions */
+            border-left: 4px solid #FFA000; /* Darker yellow accent border */
+        }
+
+        .muhurtha-box:hover {
+            transform: translateX(5px);
+            background-color: #FFFDE7; /* Keep the same hover bg color */
+        }
+
+        .muhurtha-title {
+            font-weight: bold;
+            color: #FFC107; /* Material Design yellow title */
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .muhurtha-times {
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .time-highlight {
+            color: #FF6D00; /* Orange-yellow highlights */
+            font-weight: bold;
+        }
+
+        .direction {
+            color: #FF6D00; /* Orange-yellow directions */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 12px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .muhurtha-box {
+                padding: 10px;
+            }
+
+            .muhurtha-title {
+                font-size: 1rem;
+            }
+
+            .muhurtha-times {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .muhurtha-times {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Prevent mobile zooming and text selection
+        document.addEventListener('gesturestart', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>සුබ මුහුර්ත</h1>
+
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">කන් විදීම</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">ජනවාරි 09 බ්‍රහස්පතින්දා උදේ 09:28</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 19 බදාදා උදේ 10:01</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මැයි 02 සිකුරාදා උදේ 10:09</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">අගෝස්තු 04 සඳුදා උදේ 11:08</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 04 බ්‍රහස්පතින්දා උදේ 09:06</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">නොවැම්බර් 03 සඳුදා උදේ 11:38</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 11 බ්‍රහස්පතින්දා උදේ 11:43</span>ට <span class="direction">නැඟෙනහිර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">බත් කැවීම</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">ජනවාරි 15 බදාදා උදේ 08:06</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 26 බදාදා උදේ 09:30</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">අප්‍රේල් 18 සිකුරාදා උදේ 10:05</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">අගෝස්තු 06 බදාදා උදේ 09:08</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 03 බදාදා උදේ 09:06</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">ඔක්තෝබර් 02 බ්‍රහස්පතින්දා උදේ 11:28</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">නොවැම්බර් 03 සඳුදා උදේ 11:38</span>ට <span class="direction">උතුර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">අකුරු කියවීමට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">පෙබරවාරි 28 සිකුරාදා උදේ 06:34</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 05 බදාදා උදේ 06:38</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 26 බදාදා උදේ 09:30</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">අප්‍රේල් 02 බදාදා උදේ 09:12</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මැයි 07 බදාදා උදේ 08:58</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 03 බදාදා උදේ 09:06</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 05 සිකුරාදා උදේ 10:12</span>ට <span class="direction">දකුණ</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">හිසකේ කැපීම</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">ජනවාරි 30 බ්‍රහස්පතින්දා උදේ 09:32</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 19 බදාදා උදේ 10:01</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">ජුනි 16 සඳුදා උදේ 10:58</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">ජුලි 17 බ්‍රහස්පතින්දා උදේ 10:25</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 17 බදාදා උදේ 07:38</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">ඔක්තෝබර් 02 බ්‍රහස්පතින්දා උදේ 11:28</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 31 බදාදා උදේ 09:38</span>ට <span class="direction">දකුණ</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">විවාහයට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">මාර්තු 26 බදාදා උදේ 09:30</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මැයි 23 සිකුරාදා උදේ 09:55</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">ජුනි 16 සඳුදා උදේ 10:58</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 03 බදාදා උදේ 09:06</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">නොවැම්බර් 27 බ්‍රහස්පතින්දා උදේ 10:08</span>ට <span class="direction">සිකුරාදා උදේ 10:12</span>ට <span class="direction">දකුණ</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">වෙළඳාමට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">පෙබරවාරි 20 බ්‍රහස්පතින්දා උදේ 06:30</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 05 බදාදා උදේ 06:38</span>ට <span class="direction">නැඟෙනහිර සිකුරාදා උදේ 09:55</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">අගෝස්තු 04 සඳුදා උදේ 11:08</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">ඔක්තෝබර් 02 බ්‍රහස්පතින්දා උදේ 11:28</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 11 බ්‍රහස්පතින්දා උදේ 11:43</span>ට <span class="direction">නැඟෙනහිර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">සියලු ගොවිතැන් වැඩට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">ජනවාරි 15 බදාදා උදේ 08:06</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මැයි 05 සඳුදා උදේ 06:55</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">ජුනි 09 සඳුදා උදේ 06:25</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">ජූලි 02 බදාදා උදේ 06:15</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">සැප්තැම්බර් 22 සඳුදා උදේ 06:27</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 26 සිකුරාදා උදේ 07:21</span>ට <span class="direction">උතුර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">ගෙවල් සෑදීමට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">පෙබරවාරි 28 සිකුරාදා උදේ 06:34</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">මැයි 28 බදාදා උදේ 09:32</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">අගෝස්තු 20 බදාදා උදේ 09:08</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">නොවැම්බර් 06 බ්‍රහස්පතින්දා උදේ 06:01</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 25 බ්‍රහස්පතින්දා උදේ 06:21</span>ට <span class="direction">නැඟෙනහිර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">මහණ කිරීමට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">පෙබරවාරි 28 සිකුරාදා උදේ 06:34</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">මැයි 28 බදාදා උදේ 09:32</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">අගෝස්තු 20 බදාදා උදේ 09:08</span>ට <span class="direction">දකුණ</span> බලා,<br>
+                <span class="time-highlight">නොවැම්බර් 06 බ්‍රහස්පතින්දා උදේ 06:01</span>ට <span class="direction">උතුර</span> බලා,<br>
+                <span class="time-highlight">දෙසැම්බර් 25 බ්‍රහස්පතින්දා උදේ 06:21</span>ට <span class="direction">නැඟෙනහිර</span> බලා.
+            </div>
+        </div>
+        <div class="muhurtha-box">
+            <div class="muhurtha-title">ගෙවදීමට</div>
+            <div class="muhurtha-times">
+                <span class="time-highlight">පෙබරවාරි 20 බ්‍රහස්පතින්දා උදේ 06:30</span>ට <span class="direction">නැඟෙනහිර</span> බලා,<br>
+                <span class="time-highlight">මාර්තු 05 බදාදා උදේ 06:38</span>ට <span class="direction">නැඟෙනහිර</span> බලා.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
