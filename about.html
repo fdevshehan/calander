@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>About</title>
+  <style>
+    body {
+      background-color: #FFF8E1; /* කහ පැහැති පසුබිම */
+      color: #5D4037; /* තද බොර පැහැති අකුරු */
+      padding: 20px;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      touch-action: manipulation;
+    }
+
+    h2 {
+      color: #FF8F00; /* තද කහ පැහැය */
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #FFC107;
+    }
+
+    p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      margin-bottom: 12px;
+      position: relative;
+      list-style-type: none;
+      padding-left: 25px;
+    }
+
+    li:before {
+      content: "•";
+      color: #FFA000; /* කහ බුලට් පොයින්ට් */
+      font-size: 1.5rem;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+
+    .highlight {
+      color: #FF6D00; /* තරමක් තද කහ-තැඹිලි */
+      font-weight: 600;
+    }
+
+    .card {
+      background-color: #FFFDE7; /* ආලෝකමත් කහ පැහැය */
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-left: 4px solid #FFA000;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 15px;
+      }
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      .card {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>About the Smart Calendar</h2>
+
+    <p>
+      Our Smart Calendar webapp is designed to serve as a comprehensive guide for Sri Lankans to manage and understand important cultural, religious, and public events throughout the year.
+    </p>
+  </div>
+
+  <div class="card">
+    <p>
+      This calendar includes the following key features:
+    </p>
+
+    <ul>
+      <li><span class="highlight">Daily Calendar:</span> View the current date, day of the week, and full monthly calendar interface in a user-friendly layout.</li>
+
+      <li><span class="highlight">Sinhala and Hindu New Year Events:</span> Learn about the traditional rituals and auspicious times (nekath) associated with the Sinhala and Hindu New Year including cleaning the house, first bath, oiling the head, and more.</li>
+
+      <li><span class="highlight">Poya & Holidays:</span> Stay updated on all Sri Lankan government holidays and full moon (Poya) days that are important for religious observances and cultural events.</li>
+
+      <li><span class="highlight">Rahu periods:</span> Access daily Rahu periods which are traditionally considered inauspicious for starting new ventures or activities, especially in astrology and religious practices.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p>
+      This digital calendar is optimized for mobile devices and ensures you never miss an important date, ritual, or national event again.
+    </p>
+  </div>
+
+  <script>
+    // Mobile-specific fixes
+    document.addEventListener('DOMContentLoaded', function() {
+      // Prevent zooming
+      document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+      });
+      
+      // Ensure text doesn't cause zoom on focus
+      document.body.style.fontSize = '16px';
+    });
+  </script>
+</body>
+</html>
