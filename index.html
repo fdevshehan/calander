@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>2025 Litha</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #FFF8E1; /* කහ පැහැති පසුබිම */
+      color: #5D4037; /* තද බොර පැහැති අකුරු */
+      touch-action: manipulation;
+      overflow-x: hidden;
+    }
+
+    /* නැව් තීරුව - කහ තේමාව */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 8px;
+      background: linear-gradient(90deg, #FFC107, #FFA000); /* කහ ඉරිගැල්ල */
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-bottom: 1px solid #FFB300;
+    }
+
+    .navbar button {
+      background-color: #FFC107;
+      color: #5D4037;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      flex: 1;
+      max-width: 120px;
+      transition: all 0.3s;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      -webkit-appearance: none;
+    }
+
+    .navbar button:active {
+      transform: scale(0.95);
+      background-color: #FFA000;
+    }
+
+    /* iframe කන්ටේනරය */
+    .iframe-container {
+      width: 100%;
+      height: calc(100vh - 56px);
+      padding: 10px;
+      background-color: #FFFDE7; /* ආලෝකමත් කහ පසුබිම */
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background-color: #FFFDE7;
+    }
+
+    /* මොබයිල් සඳහා අතිරේක සැකසුම් */
+    @media (max-width: 480px) {
+      .navbar {
+        gap: 8px;
+        padding: 10px 5px;
+      }
+      
+      .navbar button {
+        padding: 8px 12px;
+        font-size: 14px;
+        max-width: 100px;
+      }
+      
+      .iframe-container {
+        padding: 8px;
+        height: calc(100vh - 52px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <button onclick="loadPage('home.html')">Home</button>
+    <button onclick="loadPage('about.html')">About</button>
+    <button onclick="loadPage('contact.html')">Contact</button>
+  </div>
+
+  <div class="iframe-container">
+    <iframe id="main-frame" src="home.html" sandbox="allow-same-origin allow-scripts allow-popups allow-forms"></iframe>
+  </div>
+
+  <script>
+    function loadPage(page) {
+      document.getElementById('main-frame').src = page;
+    }
+
+    // මොබයිල් අනුකූලතාව සඳහා
+    document.addEventListener('DOMContentLoaded', function() {
+      // Zoom අවහිර කිරීම
+      document.addEventListener('gesturestart', function(e) {
+        e.preventDefault();
+      });
+      
+      // ටෙක්ස්ට් තේරීම අවහිර කිරීම
+      document.addEventListener('selectstart', function(e) {
+        e.preventDefault();
+      });
+      
+      // අක්ෂර විශාල වීම වලකන්න
+      const inputs = document.querySelectorAll('input, textarea, select, button');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.style.fontSize = '16px';
+        });
+      });
+    });
+
+    // iframe ඇතුළත පාලනය
+    document.getElementById('main-frame').addEventListener('load', function() {
+      try {
+        const iframeDoc = this.contentDocument || this.contentWindow.document;
+        
+        // Zoom අවහිර කිරීම
+        const meta = iframeDoc.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0';
+        iframeDoc.head.appendChild(meta);
+        
+        // සිරස් ස්ක්‍රෝල් පමණක් ඉඩ දීම
+        iframeDoc.documentElement.style.overflowX = 'hidden';
+        iframeDoc.body.style.overflowX = 'hidden';
+        
+        iframeDoc.body.style.fontSize = '16px';
+        
+      } catch (e) {
+        console.log('Cross-origin iframe access blocked');
+      }
+    });
+  </script>
+</body>
+</html> 
