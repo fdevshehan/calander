@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Viewport meta for mobile-first and zoom prevention -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <title>රාහු කාලය</title>
+  <style>
+    /* Root styles */
+    html {
+      font-size: 16px;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      margin: 0;
+      padding: 15px;
+      background-color: #FFF8E1; /* Light yellow background */
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #5D4037; /* Dark brown text */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      box-sizing: border-box;
+      touch-action: manipulation;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Container as a card */
+    .container {
+      width: 100%;
+      max-width: 700px;
+      margin: 15px 0;
+      padding: 15px;
+      background-color: #FFFDE7; /* Lighter yellow for cards */
+      border-radius: 12px;
+      border-left: 4px solid #FFA000; /* Darker yellow accent */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      animation: fadeIn 0.8s ease-in-out;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.8rem;
+      color: #FFC107; /* Primary accent */
+      margin: 10px 0 15px;
+    }
+
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .day-box {
+      background-color: #FFFDE7;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, background-color 0.3s ease;
+      border-left: 4px solid #FFA000;
+    }
+
+    .day-box:hover {
+      background-color: #FFE082; /* Subtle hover highlight */
+      transform: scale(1.02);
+    }
+
+    .day-name {
+      font-weight: bold;
+      color: #FF6D00; /* Orange-yellow highlight */
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .time-range {
+      font-size: 0.9rem;
+      color: #5D4037;
+    }
+
+    .note {
+      margin-top: 20px;
+      background-color: #FFF3E0;
+      padding: 10px;
+      border-left: 4px solid #FFA000;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      color: #5D4037;
+      line-height: 1.5;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile improvements for <600px */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+        margin: 5px 0 10px;
+      }
+
+      .container {
+        padding: 12px;
+        border-radius: 10px;
+      }
+
+      .day-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .day-box {
+        padding: 10px;
+      }
+
+      .day-name {
+        font-size: 0.95rem;
+      }
+
+      .time-range {
+        font-size: 0.85rem;
+      }
+
+      .note {
+        font-size: 0.85rem;
+        padding: 8px;
+      }
+    }
+
+    /* Ultra small devices <360px */
+    @media (max-width: 360px) {
+      body {
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.3rem;
+      }
+
+      .day-name {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Button baseline styling (if buttons are added later) */
+    button {
+      -webkit-appearance: none;
+      background-color: #FFC107;
+      color: #5D4037;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    button:active {
+      transform: scale(0.98);
+      background-color: #FFA000;
+    }
+
+    /* Disable gesture zooming and text selection */
+    html, body {
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  </style>
+  <script>
+    // Prevent gesture zooming on iOS
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+
+    // Prevent text selection via double-tap/long-press
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>රාහු කාලය</h1>
+
+    <div class="day-grid">
+      <div class="day-box">
+        <div class="day-name">ඉරිදා</div>
+        <div class="time-range">04.30 - 06.00</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">සඳුදා</div>
+        <div class="time-range">07.30 - 09.00</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">අඟහරුවාදා</div>
+        <div class="time-range">03.00 - 04.30</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">බදාදා</div>
+        <div class="time-range">12.00 - 01.30</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">බ්‍රහස්පතින්දා</div>
+        <div class="time-range">01.30 - 03.00</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">සිකුරාදා</div>
+        <div class="time-range">10.30 - 12.00</div>
+      </div>
+      <div class="day-box">
+        <div class="day-name">සෙනසුරාදා</div>
+        <div class="time-range">09.00 - 10.30</div>
+      </div>
+    </div>
+
+    <div class="note">
+      රාහු කාලය තුළ <strong>සුබ කටයුතු</strong> ආරම්භ කිරීම <span style="color: #FF6D00;">නුසුදුසුය</span>. සූර්යෝදය අනුව සකස් කරගන්න. (දිවා)<br/>
+      රාත්‍රි දෙකටම <strong>එක සේය</strong>.
+    </div>
+  </div>
+</body>
+</html>
