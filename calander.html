@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+  <meta charset="UTF-8" />
+  <!-- Viewport Meta for Mobile-First Design -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+  <title>2025 Calendar</title>
+  <style>
+    /* Base Styles and Reset */
+    html, body {
+      margin: 0;
+      padding: 20px;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #FFF8E1;
+      color: #5D4037;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      font-size: 16px;
+      -webkit-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      transition: all 0.3s ease;
+    }
+
+    /* Container Style Update */
+    .calendar-container {
+      background-color: #FFFDE7;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 95%;
+      max-width: 800px;
+      text-align: center;
+      border-left: 4px solid #FFA000;
+      margin: 20px 0;
+      animation: fadeIn 1s ease-in-out;
+      transition: all 0.3s ease;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #FF6D00;
+    }
+
+    .month-box {
+      background-color: #FFFDE7;
+      padding: 10px;
+      border-radius: 12px;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      position: relative;
+      margin-bottom: 30px;
+      width: 100%;
+      box-sizing: border-box;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #FFA000;
+    }
+
+    .month-box:hover {
+      background-color: #FFE082;
+    }
+
+    .month-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #FFC107;
+      margin-bottom: 5px;
+    }
+
+    .month-number {
+      font-size: 1.2rem;
+      color: #5D4037;
+      margin-bottom: 10px;
+    }
+
+    .week-days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .week-day {
+      padding: 8px;
+      border-radius: 5px;
+      background-color: #FFECB3;
+      color: #5D4037;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .day-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-top: 10px;
+    }
+
+    .day {
+      padding: 8px 5px;
+      border-radius: 8px;
+      background-color: #FFF8E1;
+      color: #5D4037;
+      transition: background-color 0.2s ease;
+      font-size: 0.9rem;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .day:hover {
+      background-color: #FFCC80;
+    }
+
+    .poya-day {
+      background-color: #FF6D00;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .empty-day {
+      background-color: transparent;
+    }
+
+    /* Button Styling (even if added later) */
+    button {
+      border: none;
+      border-radius: 25px;
+      background-color: #FFC107;
+      color: #5D4037;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      -webkit-appearance: none;
+      transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Responsive Adjustments for Small Screens */
+    @media (max-width: 600px) {
+      .calendar-container {
+        width: 100%;
+        padding: 10px;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .month-name {
+        font-size: 1.2rem;
+      }
+
+      .month-number {
+        font-size: 1rem;
+      }
+
+      .week-day, .day {
+        padding: 5px 2px;
+        font-size: 0.8rem;
+      }
+
+      .poya-day {
+        font-size: 0.7rem;
+      }
+    }
+  </style>
+  <script>
+    // Prevent pinch zoom & text selection events
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+    document.addEventListener('selectstart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</head>
+<body>
+  <div class="calendar-container">
+    <h1>2025 Calendar</h1>
+
+    <div class="month-list" id="month-list">
+      <!-- Months will be populated here by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    const poyaDays = {
+      January: [13],
+      February: [12],
+      March: [13],
+      April: [12],
+      May: [12],
+      June: [10],
+      July: [10],
+      August: [8],
+      September: [7],
+      October: [6],
+      November: [5],
+      December: [4]
+    };
+
+    const months = [
+      { name: "January", days: 31 },
+      { name: "February", days: 28 },
+      { name: "March", days: 31 },
+      { name: "April", days: 30 },
+      { name: "May", days: 31 },
+      { name: "June", days: 30 },
+      { name: "July", days: 31 },
+      { name: "August", days: 31 },
+      { name: "September", days: 30 },
+      { name: "October", days: 31 },
+      { name: "November", days: 30 },
+      { name: "December", days: 31 },
+    ];
+
+    const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+    function generateCalendar() {
+      const list = document.getElementById('month-list');
+      months.forEach((month, index) => {
+        const monthBox = document.createElement('div');
+        monthBox.classList.add('month-box');
+        
+        const monthName = document.createElement('div');
+        monthName.classList.add('month-name');
+        monthName.textContent = month.name;
+        
+        const monthNumber = document.createElement('div');
+        monthNumber.classList.add('month-number');
+        monthNumber.textContent = `${month.days} Days`;
+
+        const weekDaysGrid = document.createElement('div');
+        weekDaysGrid.classList.add('week-days');
+        
+        weekDays.forEach(day => {
+          const dayBox = document.createElement('div');
+          dayBox.classList.add('week-day');
+          dayBox.textContent = day;
+          weekDaysGrid.appendChild(dayBox);
+        });
+
+        const dayGrid = document.createElement('div');
+        dayGrid.classList.add('day-grid');
+        
+        // Get first day of month (0-6 where 0 is Sunday)
+        const firstDay = new Date(2025, index, 1).getDay();
+        
+        // Add blank spaces for days before the first day of month
+        for (let i = 0; i < firstDay; i++) {
+          const emptyBox = document.createElement('div');
+          emptyBox.classList.add('day', 'empty-day');
+          dayGrid.appendChild(emptyBox);
+        }
+        
+        // Add days to the grid
+        for (let i = 1; i <= month.days; i++) {
+          const dayBox = document.createElement('div');
+          dayBox.classList.add('day');
+          dayBox.textContent = i;
+          
+          // Add Poya day highlight
+          if (poyaDays[month.name].includes(i)) {
+            dayBox.classList.add('poya-day');
+          }
+          
+          dayGrid.appendChild(dayBox);
+        }
+        
+        monthBox.appendChild(monthName);
+        monthBox.appendChild(monthNumber);
+        monthBox.appendChild(weekDaysGrid);
+        monthBox.appendChild(dayGrid);
+
+        list.appendChild(monthBox);
+      });
+    }
+
+    // Initialize calendar when page loads
+    window.onload = generateCalendar;
+  </script>
+</body>
+</html>
