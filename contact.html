@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Developer Contact</title>
+  <style>
+    /* Base styling */
+    html {
+      font-size: 16px;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      touch-action: manipulation;
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #FFF8E1; /* Light yellow */
+      color: #5D4037; /* Dark brown */
+      padding: 20px;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    h2 {
+      color: #FFC107; /* Material Yellow */
+      font-size: 2rem;
+      margin-bottom: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      border: 3px solid #FFC107;
+      transition: box-shadow 0.3s ease;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      transition: color 0.3s ease;
+    }
+
+    .contact-info {
+      background-color: #FFFDE7; /* Lighter yellow */
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #FFA000; /* Darker accent */
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .highlight {
+      color: #FF6D00; /* Orange-yellow */
+      transition: color 0.3s ease;
+    }
+
+    button {
+      background-color: #FFC107;
+      color: #5D4037;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      -webkit-appearance: none;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .contact-info {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Developer Contact</h2>
+  
+  <img src="div.jpg" alt="Profile Image" class="profile-img" />
+
+  <p>
+    If you encounter any erroes or would like to request custom service, please contact me directly.
+  </p>
+
+  <div class="contact-info">
+    <p><span class="highlight">WhatsApp:</span> 0779012471</p>
+    <!--
+    <p><span class="highlight">Email:</span> shehanthilakarathna0003@gmail.com</p> -->
+  </div>
+
+  <script>
+    // Disable zoom via Ctrl+wheel
+    document.addEventListener('wheel', function(e) {
+      if (e.ctrlKey) {
+        e.preventDefault();
+      }
+    }, { passive: false });
+
+    // Disable text selection
+    document.addEventListener('selectstart', function(e) {
+      e.preventDefault();
+    });
+
+    // Prevent gesture zoom on iOS
+    document.addEventListener('gesturestart', function(e) {
+      e.preventDefault();
+    });
+
+    // Disable default mousedown selection behavior
+    document.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+    });
+
+    // Zoom lock for small screens
+    window.addEventListener('resize', function() {
+      document.body.style.zoom = "100%";
+    });
+
+    window.onload = function() {
+      document.body.style.zoom = "100%";
+    };
+  </script>
+</body>
+</html>
